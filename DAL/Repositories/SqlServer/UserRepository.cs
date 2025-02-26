@@ -64,24 +64,26 @@ namespace DAL.Repositories.SqlServer
                     dr.GetValues(values);
                 }
 
+                return user;
             }
         }
 
         public void Insert(User Object)
         {
-            SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text,
-                new SqlParameter[] {    new SqlParameter("@LoginName", object.LoginName),
-                                        new SqlParameter("@Password", object.Password),
-                                        new SqlParameter("@FirstName", object.FirstName),
-                                        new SqlParameter("@LastName", object.LastName),
-                                        new SqlParameter("@Position", object.Position),
-                                        new SqlParameter("@Email", object.Email)});
+            //SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text,
+            //    new SqlParameter[] {    new SqlParameter("@LoginName", object.LoginName),
+            //                            new SqlParameter("@Password", object.Password),
+            //                            new SqlParameter("@FirstName", object.FirstName),
+            //                            new SqlParameter("@LastName", object.LastName),
+            //                            new SqlParameter("@Position", object.Position),
+            //                            new SqlParameter("@Email", object.Email) 
+            //    });
         
-    }
+        }
 
        public void Update(Guid UserId, User Object)
-        {
+       {
             throw new NotImplementedException();
-        }
+       }
     }
 }
